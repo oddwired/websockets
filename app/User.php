@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function socketApps(){
+        return $this->hasMany(SocketApp::class, "user_id", "id");
+    }
 }
